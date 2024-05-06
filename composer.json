@@ -1,0 +1,48 @@
+{
+    "name": "hothaifadev/tfcrp",
+    "description": "My awesome package",
+    "keywords": [
+        "the f*** core component repository"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "*"
+    },
+    "require-dev":{
+        "phpunit/phpunit" : "*",
+        "scrutinizer/ocular": "~1.1",
+        "satooshi/php-coveralls": "^0.7.0",
+        "mockery/mockery": ">=0.7.2",
+        "phpspec/phpspec": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MehediIitdu\\CoreComponentRepository\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MehediIitdu\\CoreComponentRepository\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MehediIitdu\\CoreComponentRepository\\CoreComponentRepositoryServiceProvider"
+            ],
+            "aliases": {
+                "CoreComponentRepository": "MehediIitdu\\CoreComponentRepository\\CoreComponentRepositoryFacade"
+            }
+        }
+    }
+}
